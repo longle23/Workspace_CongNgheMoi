@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form
+      action="/save"
+      method="post"
+      enctype="multipart/form-data"
+      onsubmit="return kiemTraThem()"
+    >
+      <input id="STT" name="STT" placeholder="STT" onblur="kiemTraSTT()" />
+      <span id="spSTT">*</span>
+
+      <input
+        id="ChiSoISBN"
+        name="ChiSoISBN"
+        placeholder="ChiSoISBN"
+        onblur="kiemTraISBN()"
+      />
+      <span id="spChiSoISBN">*</span>
+
+      <input
+        id="NamXuatBan"
+        name="NamXuatBan" 
+        placeholder="NamXuatBan"
+        onblur="kiemTraNXB()"
+      />
+      <span id="spNamXuatBan">*</span>
+
+      <input
+        id="SoTrang"
+        name="SoTrang"
+        placeholder="SoTrang"
+        onblur="kiemTraSoTrang()"
+      />
+      <span id="spSoTrang">*</span>
+
+      <input
+        id="TenBaiBao"
+        name="TenBaiBao"
+        placeholder="TenBaiBao"
+        onblur="kiemTraTenBaiBao()"
+      />
+      <span id="spTenBaiBao">*</span>
+
+      <input
+        id="TenNhomTacGia"
+        name="TenNhomTacGia"
+        placeholder="TenNhomTacGia"
+        onblur="kiemTraTacGia()"
+      />
+      <span id="spTenNhomTacGia">*</span>
+
+      <input type="submit" />
+    </form>
+  </body>
+
+  <script>
+    function kiemTraSTT() {
+      if (document.getElementById("STT").value.trim() == "") {
+        spSTT.innerHTML = "khong duoc bo trong";
+        return false;
+      } else {
+        spSTT.innerHTML = "*";
+        return true;
+      }
+    }
+
+    function kiemTraISBN() {
+      if (document.getElementById("ChiSoISBN").value.trim() == "") {
+        spChiSoISBN.innerHTML = "khong duoc bo trong";
+        return false;
+      } else {
+        spChiSoISBN.innerHTML = "*";
+        return true;
+      }
+    }
+
+    function kiemTraNXB() {
+      if (document.getElementById("NamXuatBan").value.trim() == "") {
+        spNamXuatBan.innerHTML = "khong duoc bo trong";
+        return false;
+      } else {
+        spNamXuatBan.innerHTML = "*";
+        return true;
+      }
+    }
+
+    function kiemTraSoTrang() {
+      if (document.getElementById("SoTrang").value.trim() == "") {
+        spSoTrang.innerHTML = "khong duoc bo trong";
+        return false;
+      } else {
+        spSoTrang.innerHTML = "*";
+        return true;
+      }
+    }
+
+    function kiemTraTenBaiBao() {
+      if (document.getElementById("TenBaiBao").value.trim() == "") {
+        spTenBaiBao.innerHTML = "khong duoc bo trong";
+        return false;
+      } else {
+        spTenBaiBao.innerHTML = "*";
+        return true;
+      }
+    }
+
+    function kiemTraTacGia() {
+      if (document.getElementById("TenNhomTacGia").value.trim() == "") {
+        spTenNhomTacGia.innerHTML = "khong duoc bo trong";
+        return false;
+      } else {
+        spTenNhomTacGia.innerHTML = "*";
+        return true;
+      }
+    }
+
+    function kiemTraThem() {
+      if (
+        kiemTraISBN() == false ||
+        kiemTraNXB() == false ||
+        kiemTraSTT() == false ||
+        kiemTraSoTrang() == false ||
+        kiemTraTacGia() == false ||
+        kiemTraTenBaiBao() == false
+      ) {
+        alert("Chua nhap day du thong tin");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</html>

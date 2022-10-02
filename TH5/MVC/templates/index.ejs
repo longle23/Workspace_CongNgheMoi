@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="text" name="ma_sp" placeholder="Nhập mã sản phẩm" />
+        <input type="text" name="ten_sp" placeholder="Nhập tên sản phẩm" />
+        <input type="number" name="so_luong" placeholder="Nhập số lượng sản phẩm" />
+        <input type="submit" value="Thêm mới sản phẩm" />
+    </form>
+    <table>
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Xoa</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td>
+                    <%= data[i].ma_sp %>
+                </td>
+                <td>
+                    <%= data[i].ten_sp %>
+                </td>
+                <td>
+                    <%= data[i].so_luong %>
+                </td>
+                <td>
+                    <form action="/delete" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="ma_sp" value="<%= data[i].ma_sp %>">
+                        <input type="submit" value="Xoa">
+                    </form>
+                </td>
+                
+            </tr>
+            <% } %>
+
+    </table>
+</body>
+
+
+</html>
