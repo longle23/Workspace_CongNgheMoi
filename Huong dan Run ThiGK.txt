@@ -1,0 +1,18 @@
+npm init –y
+
+npm i express
+npm i nodemon
+npm i ejs
+npm i dotenv
+npm i yurn
+npm i multer
+npm i aws-sdk
+
+-- Add in packaga.json (scripts)
+"dev": "nodemon index.js",
+
+-- Run
+VSCode: node index.js
+CMD: yarn dev
+
+localhost:3000
